@@ -48,6 +48,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'rstacruz/sparkup'
+Plugin 'scrooloose/nerdtree'
 
 " Tmux
 Plugin 'benmills/vimux'
