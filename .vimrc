@@ -313,6 +313,7 @@ let g:EasyMotion_leader_key = '<Space>'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_working_path_mode = 0
 
 
 "" Tagbar
