@@ -1,29 +1,29 @@
 # dotfiles
 
-cp ~/dotfiles/.vimrc ~/
-
-cp ~/dotfiles/.vim/colors/bubblegum.vim ~/.vim/colors
+cp ~/dotfiles/.vim/colors/* ~/.vim/colors
 
 git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-
-:PluginInstall
-
-Update vim to latest version
 
 chsh -s /bin/zsh
 
 while in zsh:
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-add .zhrc to ~/
+source ~/dotfiles/zshfonfig.sh
 
-brew install tmux
-brew install reattach-to-user-namespace
+brew install tmux; brew install reattach-to-user-namespace
 
-cp ~/dotfiles/.tmux.conf ~/
+source ~/dotfiles/make.sh
 
-cp ~/dotfiles/.tmux_statusbar.conf ~/
+Update vim to latest version
 
-tmux source-file ~/.tmux.conf
+:PluginInstall
 
-tmux source-file ~/.tmux_statusbar.conf
+tmux source-file ~/.tmux.conf; tmux source-file ~/.tmux_statusbar.conf
+
+add git module to .zpreztorc
+
+remove aliases from ~/.zprezto/modules/git/alias.zsh
+
+add promt to .zpreztorc
+good themes: sorin, damoekri, peepcode, minimal, giddie, paradox
