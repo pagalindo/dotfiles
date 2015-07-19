@@ -405,4 +405,13 @@ endif
 
 
 "" MACROS -------------------------------------------------------------------
-let @c = "yss)Iconsole.logjjA;jj"
+" console.log("");
+let @c = 'yss"yss)Iconsole.logjjA;jj'
+" this.get("")i
+let @g = 'ysiW"ysiW)ithis.getjjEa'
+" this.set("", i)
+let @s = 'ysiW"ysiW)ithis.setjjl%i, '
+" f: function() {
+    " i
+" },
+let @m = 'A: function() {},jjhi'
