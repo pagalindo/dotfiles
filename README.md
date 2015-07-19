@@ -1,5 +1,7 @@
 # dotfiles
 
+## General Installation
+
 cp ~/dotfiles/.vim/colors/* ~/.vim/colors
 
 git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
@@ -21,9 +23,12 @@ Update vim to latest version
 
 tmux source-file ~/.tmux.conf; tmux source-file ~/.tmux_statusbar.conf
 
+## Configuration
+
 add git module to .zpreztorc
 
 remove aliases from ~/.zprezto/modules/git/alias.zsh
 
-add promt to .zpreztorc
-good themes: sorin, damoekri, peepcode, minimal, giddie, paradox
+add promt to .zpreztorc. Good themes: sorin, damoekri, peepcode, minimal, giddie, paradox
+
+install jsctags (https://github.com/mozilla/doctorjs)
