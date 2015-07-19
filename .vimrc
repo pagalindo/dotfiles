@@ -370,6 +370,7 @@ if has('gui_running')
   set go-=T
 endif
 
+" allows ctrl-arrowkey to move lines up and down if using tmux
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
@@ -378,16 +379,21 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
+" saves cursor position when switching buffers
 set viminfo='10,\"100,:20,%,n~/.viminfo
-
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
     return 1
   endif
 endfunction
-
 augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" keeps window positions when switching buffers
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
