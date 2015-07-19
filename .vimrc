@@ -270,6 +270,9 @@ nnoremap <Leader>. :TagbarToggle<cr>
 " mapping to use ctrlp tags function
 nnoremap <silent> <Leader>b :CtrlPTag<CR>
 
+"" mapping to update jsctags in current directory
+nnoremap <Leader>jt :!jsctags .<CR>
+
 
 "" PLUGINS -------------------------------------------------------------------
 
@@ -297,6 +300,8 @@ let g:blockify_pairs = {
 "" Numbers
 let g:numbers_exclude = ['nerdtree']
 
+"" Nerd Tree
+nnoremap <Leader>n :NERDTree<CR>
 
 "" Syntastic
 let g:syntastic_enable_signs=1
