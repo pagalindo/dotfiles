@@ -408,9 +408,9 @@ endif
 " console.log("");
 let @c = 'yss"yss)Iconsole.logjjA;jj'
 " this.get("")i
-let @g = 'ysiW"ysiW)ithis.getjjEa'
+let @g = 'ysiw"ysa")ithis.getjjEa'
 " this.set("", i)
-let @s = 'ysiW"ysiW)ithis.setjjl%i, '
+let @s = 'ysiw"ysa")ithis.setjjl%i, '
 " f: function() {
     " i
 " },
