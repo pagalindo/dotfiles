@@ -25,6 +25,14 @@ g() {
         command git log $@[2,$#]
     elif [[ $1 == "ar" ]]; then
         command git add -- "*$2*"
+    elif [[ $1 == "sa" ]]; then
+        command git stash apply stash\@\{$2\}
+    elif [[ $1 == "sd" ]]; then
+        command git stash drop stash\@\{$2\}
+    elif [[ $1 == "sp" ]]; then
+        command git stash pop stash\@\{$2\}
+    elif [[ $1 == "ss" ]]; then
+        command git stash show -p stash\@\{$2\}
     else
         command git $@
     fi
