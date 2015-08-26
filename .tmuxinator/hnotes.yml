@@ -1,0 +1,24 @@
+# ~/.tmuxinator/hnotes.yml
+name: hnotes
+root: ~/
+
+windows:
+  - notes:
+      root: Google Drive/Notes
+      layout: even-horizontal
+      panes:
+        - vim stuff.txt
+        - #empty
+  - emberTest:
+      root: ~/code/ember-test
+      layout: d40b,204x51,0,0{102x51,0,0,39,101x51,103,0[101x25,103,0,41,101x25,103,26,42]}
+      panes:
+        - vim app/templates/index.hbs -c "cd app"
+        - #empty
+        - #empty
+  - dotfiles:
+      root: dotfiles
+      layout: even-horizontal
+      panes:
+        - vim .vimrc
+        - #empty

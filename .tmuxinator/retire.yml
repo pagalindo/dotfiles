@@ -1,0 +1,24 @@
+# ~/.tmuxinator/retire.yml
+name: retire
+root: ~/code/retirement-explorer
+
+windows:
+  - retire:
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+  - server:
+      root: ~/code
+      layout: e4b5,204x51,0,0[204x25,0,0{102x25,0,0,1,101x25,103,0,7},204x25,0,26{102x25,0,26,5,101x25,103,26,6}]
+      panes:
+        - cd retirement-explorer
+        - cd partner-facade
+        - cd build/dev
+        - cd build/dev
+  - config:
+      root: ~/code/build/jboss7/hellowallet/config
+      layout: even-horizontal
+      panes:
+        - vim local-env.properties
+        - #empty
