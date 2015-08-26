@@ -1,0 +1,17 @@
+# ~/.tmuxinator/notes.yml
+name: notes
+root: ~/
+
+windows:
+  - notes:
+      root: ~/Google Drive/Notes
+      layout: even-horizontal
+      panes:
+        - vim stuff.txt
+        - #empty
+  - dotfiles:
+      root: ~/dotfiles
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty

@@ -1,0 +1,29 @@
+# ~/.tmuxinator/program.yml
+name: program
+root: ~/Desktop/Code
+
+windows:
+  - codewars:
+      root: ~/Desktop/Code/Web/javascript/codewars
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+  - hackerRank:
+      root: ~/Desktop/Code/c++/hackerRank
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+  - usaco:
+      root: ~/Desktop/Code/c++/usaco
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+  - topCoder:
+      root: ~/Desktop/Code/c++/topCoder
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
