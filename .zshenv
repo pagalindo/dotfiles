@@ -37,9 +37,3 @@ g() {
         command git $@
     fi
 }
-
-P=~/Desktop/Pablo
-C=~/Desktop/Code
-crm=~/Desktop/Code/Web/projects/crm
-pg=~/Desktop/Code/Web/projects/pg
-N=~/Google\ Drive/Notes
