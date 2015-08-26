@@ -417,3 +417,6 @@ let @s = 'ysiw)lysiw"hithis.setjjl%i, '
     " i
 " },
 let @m = 'A: function() {},jjhi'
+
+"" sets handlebars to work tih vim-commentary
+autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
