@@ -4,6 +4,8 @@
 
 cp ~/dotfiles/.vim/colors/* ~/.vim/colors
 
+cp ~/dotfiles/.vim/UltiSnips/* ~/.vim/UltiSnips
+
 cp ~/dotfiles/.tmuxinator/* ~/.tmuxinator
 
 git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
