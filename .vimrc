@@ -16,7 +16,7 @@ call vundle#begin()
 " see :h vundle for more details or wiki for FAQ
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -47,8 +47,9 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
-Plugin 'rstacruz/sparkup'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'ap/vim-css-color' " to show colors on a scss/css file
 
 " Tmux
 Plugin 'benmills/vimux'
@@ -75,6 +76,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-liquid'
 Plugin 'rodjek/vim-puppet'
+Plugin 'keith/swift.vim' " for swift syntax
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -215,7 +217,7 @@ augroup AutoRemoveWhitespace
   autocmd BufWritePre * :call <SID>RemoveWhitespaces()
 augroup END
 
-"" up/down keys move by row, rather than line
+"" up/down keys move by file row, rather than line
 nnoremap j gj
 nnoremap k gk
 
@@ -308,7 +310,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checkers = ['jshint']
-
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint'] " for swift syntax
 
 "" EasyMotion
 let g:EasyMotion_leader_key = '<Space>'
@@ -418,5 +420,8 @@ let @s = 'ysiw)lysiw"hithis.setjjl%i, '
 " },
 let @m = 'A: function() {},jjhi'
 
-"" sets handlebars to work tih vim-commentary
+"" sets handlebars to work with vim-commentary
 autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+
+"" sets awk files to work with vim-commentary
+autocmd FileType awk setlocal commentstring=#\ %s
