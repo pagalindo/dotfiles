@@ -8,7 +8,7 @@ cp ~/dotfiles/.vim/UltiSnips/* ~/.vim/UltiSnips
 
 cp ~/dotfiles/.tmuxinator/* ~/.tmuxinator
 
-git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 chsh -s /bin/zsh
 
