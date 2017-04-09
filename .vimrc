@@ -372,7 +372,7 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "" Colors and type------------------------------------------------------------
 set guifont=Inconsolata\ for\ Powerline:h14
-colorscheme bubblegum
+colorscheme github
 if has('gui_running')
   set go-=T
 endif
