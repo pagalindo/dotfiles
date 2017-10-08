@@ -304,6 +304,7 @@ let g:numbers_exclude = ['nerdtree']
 
 "" Nerd Tree
 nnoremap <Leader>n :NERDTree<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 
 "" Syntastic
 let g:syntastic_enable_signs=1
@@ -313,6 +314,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint'] " for swift syntax
 
 "" EasyMotion
+hi link EasyMotionTarget2First Todo
+hi link EasyMotionTarget2Second Todo
 let g:EasyMotion_leader_key = '<Space>'
 
 
@@ -321,6 +324,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_open_multiple_files = 'i'
 
 
 "" Tagbar
@@ -425,3 +429,12 @@ autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
 
 "" sets awk files to work with vim-commentary
 autocmd FileType awk setlocal commentstring=#\ %s
+
+"" personal shortcuts
+nnoremap <leader>o :copen<cr>
+nnoremap <leader>c :cclose<cr>
+nnoremap <leader>w :w!<cr>
+
+nnoremap <leader>G :grep -ri <c-r><c-w> .<cr>
+nnoremap <leader>g :grep -ri <c-r><c-w>
+nnoremap <leader>s /<c-r><c-w><cr>N
