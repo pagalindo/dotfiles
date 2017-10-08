@@ -1,0 +1,32 @@
+# ~/.tmuxinator/work.yml
+name: work
+root: ~/Code
+
+windows:
+  - ember:
+      root: ~/Code/FiscalNote-Ember
+      layout: 34bd,178x46,0,0{89x46,0,0,1,88x46,90,0[88x29,90,0,5,88x16,90,30,6]}
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+        - echo "ember server --proxy=http://localhost:22780"
+  - API:
+      root: ~/Code/FiscalNote-API
+      layout: even-horizontal
+      panes:
+        - vim -c "bufdo bd"
+        - echo "npm start"
+  - ruby:
+      root: ~/Code/FiscalNote-Service
+      layout: d3d1,178x46,0,0{89x46,0,0,8,88x46,90,0[88x23,90,0,9,88x22,90,24,10]}
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+        - echo "spring stop"; echo "rails s"
+  - data accessor:
+      root: ~/Code/FN-Web-App-Data-Accessor
+      layout: d3d1,178x46,0,0{89x46,0,0,8,88x46,90,0[88x23,90,0,9,88x22,90,24,10]}
+      panes:
+        - vim -c "bufdo bd"
+        - #empty
+        - echo "npm start"; echo "node_modules/.bin/pm2 logs"
