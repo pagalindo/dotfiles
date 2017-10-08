@@ -17,8 +17,14 @@ c() {
 g() {
     if [[ $1 == "s" ]]; then
         command git status $@[2,$#]
+    elif [[ $1 == "c" ]]; then
+        command git checkout $@[2,$#]
+    elif [[ $1 == "r" ]]; then
+        command git reset $@[2,$#]
     elif [[ $1 == "d" ]]; then
         command git diff $@[2,$#]
+    elif [[ $1 == "f" ]]; then
+        command git fetch $@[2,$#]
     elif [[ $1 == "dr" ]]; then # this is my own special command
         command git diff -- "*$2*"
     elif [[ $1 == "l" ]]; then
