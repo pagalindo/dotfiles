@@ -50,6 +50,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-css-color' " to show colors on a scss/css file
+Plugin 'solarnz/thrift.vim' " syntax for thrift
 
 " Tmux
 Plugin 'benmills/vimux'
@@ -77,6 +78,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-liquid'
 Plugin 'rodjek/vim-puppet'
 Plugin 'keith/swift.vim' " for swift syntax
+Plugin 'joukevandermaas/vim-ember-hbs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -426,6 +428,7 @@ let @m = 'A: function() {},jjhi'
 
 "" sets handlebars to work with vim-commentary
 autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+autocmd FileType json setlocal commentstring=\/\/\ %s
 
 "" sets awk files to work with vim-commentary
 autocmd FileType awk setlocal commentstring=#\ %s

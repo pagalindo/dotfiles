@@ -19,6 +19,8 @@ g() {
         command git status $@[2,$#]
     elif [[ $1 == "c" ]]; then
         command git checkout $@[2,$#]
+    elif [[ $1 == "b" ]]; then
+        command git branch $@[2,$#]
     elif [[ $1 == "r" ]]; then
         command git reset $@[2,$#]
     elif [[ $1 == "d" ]]; then
@@ -43,3 +45,13 @@ g() {
         command git $@
     fi
 }
+
+pos() {
+  if [[ $1 == "activity-s" ]]; then
+    command psql -U fn_activity_monitor -h fn-web-app-list-manager-s01.cjdtimdpf6hg.us-east-1.rds.amazonaws.com web_app_activity_monitor
+  elif [[ $1 == "activity-p" ]]; then
+    command psql -U fn_activity_monitor -h fn-web-app-list-manager-p01.cjdtimdpf6hg.us-east-1.rds.amazonaws.com web_app_activity_monitor
+  fi
+}
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin

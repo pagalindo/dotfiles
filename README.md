@@ -35,4 +35,4 @@ remove aliases from ~/.zprezto/modules/git/alias.zsh
 
 add promt to .zpreztorc. Good themes: sorin, damoekri, peepcode, minimal, giddie, paradox
 
-install jsctags (https://github.com/mozilla/doctorjs)
+brew install ctags; alias ctags="`brew --prefix`/bin/ctags"
