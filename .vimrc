@@ -311,20 +311,6 @@ if v:version >= 700
 endif
 
 
-"" MACROS -------------------------------------------------------------------
-" console.log();
-let @c = 'yss)Iconsole.logjjA;jj'
-" console.log("");
-let @p = 'yss"yss)Iconsole.logjjA;jj'
-" this.get("")i
-let @g = 'ysiw)lysiw"hithis.getjjl%a'
-" this.set("", i)
-let @s = 'ysiw)lysiw"hithis.setjjl%i, '
-" f: function() {
-    " i
-" },
-let @m = 'A: function() {},jjhi'
-
 "" sets handlebars to work with vim-commentary
 autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
 
