@@ -259,18 +259,12 @@ hi link EasyMotionTarget2First Todo
 hi link EasyMotionTarget2Second Todo
 let g:EasyMotion_leader_key = '<Space>'
 
-
 "" Ctrlp
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multiple_files = 'i'
-
-
-"" Tagbar
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
 
 "" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -280,27 +274,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "" Sparkup
 let g:sparkupNextMapping="<c-s>"
 
-"" Vimux
-" Run the current file with rspec
-map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-
-" Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
-
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
-
-" Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
-
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "" Colors and type------------------------------------------------------------
 set guifont=Inconsolata\ for\ Powerline:h14
