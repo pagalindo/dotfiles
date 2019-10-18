@@ -21,43 +21,29 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 " Plugins
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-Plugin 'henrik/vim-reveal-in-finder'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'matze/vim-move'
-Plugin 'mhinz/vim-blockify'
-Plugin 'mhinz/vim-signify'
-Plugin 'mhinz/vim-startify'
-Plugin 'mileszs/ack.vim'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/vitality.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline' " status/tabline bar
+Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, etc.
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy file finder
+Plugin 'mhinz/vim-signify' " indicates added/removed/modified lines via git
+Plugin 'mhinz/vim-startify' " provides a start screen
+Plugin 'myusuf3/numbers.vim' " toggles line numbers (shows relative numbers)
+Plugin 'scrooloose/syntastic' " syntax checking
+Plugin 'sjl/vitality.vim' " changes cursor when in insert mode
+Plugin 'tpope/vim-commentary' " comments stuff out
+Plugin 'tpope/vim-eunuch' " vim sugar for unix commands. :Delete, :Rename, :Find, etc.
+Plugin 'tpope/vim-fugitive' " git wrapper. :Gstatus, :Gblame, etc.
+Plugin 'tpope/vim-sensible' " universal defaults. includes matchit.vim, which allows to find pairs in html tags
+Plugin 'tpope/vim-surround' " delete/change/add 'surroundings'. parentheses, brackets, etc.
+Plugin 'tpope/vim-unimpaired' " mappings. allows ctrl-arrowkey to work
+Plugin 'Lokaltog/vim-easymotion' " simpler way to use motions in vim
+Plugin 'terryma/vim-multiple-cursors' " multiple selection feature for vim
+Plugin 'godlygeek/tabular' " lines up text. by '=' ',' ':' etc.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " lets you write HTML code faster
+Plugin 'scrooloose/nerdtree' " file system explorer
 Plugin 'ap/vim-css-color' " to show colors on a scss/css file
 
 " Tmux
-Plugin 'benmills/vimux'
-Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'edkolev/tmuxline.vim'
-
-" Python
-Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'christoomey/vim-tmux-navigator' " move between Vim panes and tmux splits seamlessly
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -67,16 +53,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 
 " Syntax
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'groenewege/vim-less'
-Plugin 'beyondwords/vim-twig'
 Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-haml'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-liquid'
-Plugin 'rodjek/vim-puppet'
-Plugin 'keith/swift.vim' " for swift syntax
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -253,29 +232,6 @@ nnoremap <silent> <Leader>d :bp\|bd #<CR>
 au BufRead,BufNewFile *.scss set filetype=scss
 
 
-" CTAGS  -------------------------------------------------------------------
-
-" Set tag file location
-set tags+=.git/tags
-
-" Function to regenerate tag file
-function! FlushCtags()
-  silent! exe ":!ctags ."
-endfunction
-
-" mapping to regenerate tags file
-" silent! nnoremap <silent> TT :call FlushCtags()<CR>
-
-" mapping to toggle tagbar
-nnoremap <Leader>. :TagbarToggle<cr>
-
-" mapping to use ctrlp tags function
-nnoremap <silent> <Leader>b :CtrlPTag<CR>
-
-"" mapping to update jsctags in current directory
-nnoremap <Leader>jt :!jsctags .<CR>
-
-
 "" PLUGINS -------------------------------------------------------------------
 
 " Airline, a powerline replacement
@@ -283,21 +239,6 @@ let g:airline_powerline_fonts = 1
 " let g:airline_section_b = '%{getcwd()}'
 " let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
-
-
-"" Blockify
-let g:blockify_pairs = {
-      \ 'c':    [ '{', '}' ],
-      \ 'cpp':  [ '{', '}' ],
-      \ 'java': [ '{', '}' ],
-      \ 'php': [ '{', '}' ],
-      \ 'css': [ '{', '}' ],
-      \ 'scss.css': [ '{', '}' ],
-      \ 'scss': [ '{', '}' ],
-      \ 'javascript': [ '{', '}' ],
-      \ 'php.drupal': [ '{', '}' ],
-      \}
-
 
 "" Numbers
 let g:numbers_exclude = ['nerdtree']
@@ -330,19 +271,6 @@ let g:ctrlp_open_multiple_files = 'i'
 "" Tagbar
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
-
-"" Options to add support for Coffeescript
-let g:tagbar_type_coffee = {
-    \ 'ctagstype' : 'coffee',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 'm:methods',
-        \ 'f:functions',
-        \ 'v:variables',
-        \ 'f:fields',
-    \ ]
-\ }
-
 
 "" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
