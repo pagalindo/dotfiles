@@ -21,7 +21,9 @@ brew install tmux; brew install reattach-to-user-namespace
 
 source ~/dotfiles/make.sh
 
-Update vim to latest version
+Update vim to latest version and make sure it's installed with python 3
+
+pip3 install --user pynvim
 
 :PluginInstall
 

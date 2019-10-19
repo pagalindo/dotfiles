@@ -41,6 +41,10 @@ Plugin 'godlygeek/tabular' " lines up text. by '=' ',' ':' etc.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " lets you write HTML code faster
 Plugin 'scrooloose/nerdtree' " file system explorer
 Plugin 'ap/vim-css-color' " to show colors on a scss/css file
+Plugin 'dense-analysis/ale' " linting and language server
+Plugin 'Shougo/deoplete.nvim' " Fancy autocompletion engine.
+Plugin 'roxma/nvim-yarp' " for deoplete
+Plugin 'roxma/vim-hug-neovim-rpc' " for deoplete
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator' " move between Vim panes and tmux splits seamlessly
@@ -273,6 +277,24 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "" Sparkup
 let g:sparkupNextMapping="<c-s>"
+
+"" ALE
+call ale#linter#Define('javascript', {
+\   'name': 'javascript',
+\   'lsp': 'socket',
+\   'address': 'localhost:2089',
+\   'project_root': $PWD,
+\})
+nnoremap <C-]> :ALEGoToDefinition<CR>
+nnoremap T :ALEHover<CR>
+nnoremap <c-y> :ALEInfo<CR>
+nnoremap <leader>fr :ALEFindReferences<CR>
+
+"" Deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+\ '_': ['ale', 'buffer'],
+\})
 
 
 "" Colors and type------------------------------------------------------------
