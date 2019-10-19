@@ -343,6 +343,7 @@ autocmd FileType awk setlocal commentstring=#\ %s
 nnoremap <leader>o :copen<cr>
 nnoremap <leader>c :cclose<cr>
 nnoremap <leader>w :w!<cr>
+nnoremap <leader>a :!open <c-r>% -a atom<cr>
 
 nnoremap <leader>G :grep -ri <c-r><c-w> .<cr>
 nnoremap <leader>g :grep -ri <c-r><c-w>
