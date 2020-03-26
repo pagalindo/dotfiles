@@ -25,6 +25,10 @@ Update vim to latest version and make sure it's installed with python 3
 
 pip3 install --user pynvim
 
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+
 :PluginInstall
 
 tmux source-file ~/.tmux.conf; tmux source-file ~/.tmux_statusbar.conf

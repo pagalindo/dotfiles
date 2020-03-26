@@ -43,3 +43,12 @@ g() {
         command git $@
     fi
 }
+
+password='4!pWtf9K*ZSf'
+alias drd='echo '$password';psql -U fn_report_app -h fn-web-app-list-manager-d01.cjdtimdpf6hg.us-east-1.rds.amazonaws.com -p 5432 web_app_report'
+alias drs='echo '$password';psql -U fn_report_app -h fn-web-app-list-manager-s01.cjdtimdpf6hg.us-east-1.rds.amazonaws.com -p 5432 web_app_report'
+password=''
+
+ttt () {
+  echo something
+}

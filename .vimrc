@@ -27,7 +27,7 @@ Plugin 'ctrlpvim/ctrlp.vim' " fuzzy file finder
 Plugin 'mhinz/vim-signify' " indicates added/removed/modified lines via git
 Plugin 'mhinz/vim-startify' " provides a start screen
 Plugin 'myusuf3/numbers.vim' " toggles line numbers (shows relative numbers)
-Plugin 'scrooloose/syntastic' " syntax checking
+" Plugin 'scrooloose/syntastic' " syntax checking
 Plugin 'sjl/vitality.vim' " changes cursor when in insert mode
 Plugin 'tpope/vim-commentary' " comments stuff out
 Plugin 'tpope/vim-eunuch' " vim sugar for unix commands. :Delete, :Rename, :Find, etc.
@@ -45,6 +45,7 @@ Plugin 'dense-analysis/ale' " linting and language server
 Plugin 'Shougo/deoplete.nvim' " Fancy autocompletion engine.
 Plugin 'roxma/nvim-yarp' " for deoplete
 Plugin 'roxma/vim-hug-neovim-rpc' " for deoplete
+Plugin 'kshenoy/vim-signature' " vim-signature is a plugin to place, toggle and display marks.
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator' " move between Vim panes and tmux splits seamlessly
@@ -287,7 +288,7 @@ call ale#linter#Define('javascript', {
 \})
 nnoremap <C-]> :ALEGoToDefinition<CR>
 nnoremap T :ALEHover<CR>
-nnoremap <c-y> :ALEInfo<CR>
+" nnoremap <c-y> :ALEInfo<CR>
 nnoremap <leader>fr :ALEFindReferences<CR>
 
 "" Deoplete
@@ -335,9 +336,41 @@ endif
 
 "" sets handlebars to work with vim-commentary
 autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+"
+"" sets json to work with vim-commentary
+autocmd FileType json setlocal commentstring=\/\/\ %s
 
 "" sets awk files to work with vim-commentary
 autocmd FileType awk setlocal commentstring=#\ %s
+
+function ToggleReactComment()
+  if &syntax == "javascript"
+    set syntax=javascript.jsx
+    set commentstring={/*\ %s\ */}
+  elseif &syntax == "javascript.jsx"
+    set syntax=javascript
+    set commentstring=\/\/\ %s
+  endif
+endfunction
+function InitToggleReactComment()
+  let g:jsx_ext_required = 0 " .js files read as jsx
+  autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim " use sparkup in jsx files
+  nnoremap <leader>r :call ToggleReactComment()<cr>
+endfunction
+" Example:
+" autocmd BufRead,BufNewFile ~/Code/Test/** call InitToggleReactComment()
+autocmd BufRead,BufNewFile ~/Code/Test/** call InitToggleReactComment()
+autocmd BufRead,BufNewFile ~/Code/pubuntu-remote/ear-training/** call InitToggleReactComment()
+
+" autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+" function SwitchReactComment()
+"   if &commentstring == '//%s'
+"     setlocal commentstring={/*\ %s\ */}
+"   elseif &commentstring == '{/* %s */}'
+"     setlocal commentstring=//%s
+"   endif
+" endfunction
+" nnoremap <leader>r :call SwitchReactComment()<cr>
 
 "" personal shortcuts
 nnoremap <leader>o :copen<cr>
